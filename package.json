@@ -1,0 +1,32 @@
+{
+  "name": "pooy",
+  "version": "0.0.1",
+  "description": "proxy for http, https",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "proxy",
+    "http",
+    "https",
+    "node"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/better-than-better/pooy.git"
+  },
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "bugs": {
+    "url": "https://github.com/better-than-better/pooy/issues"
+  },
+  "homepage": "https://github.com/better-than-better/pooy#readme",
+  "author": "hxtao",
+  "license": "MIT",
+  "dependencies": {
+    "node-forge": "^0.8.5",
+    "statuses": "^1.5.0"
+  }
+}
