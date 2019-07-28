@@ -141,3 +141,27 @@ proxy.on('response', (ctx) => {
 ### context.host
 
 当前请求的 host，支持重写（仅在 request 时）
+
+### context.getBody
+
+获取响应内容，只是一个异步方法
+
+```js
+proxy.on('response', async (ctx) => {
+  const body = await ctx.getBody();
+
+  if (/html/.test(ctx.getHeader('content-type'))) {
+    ctx.body = body + `<script>alert('opps!!')</script>`;
+  }
+
+```
+
+### context.setBody
+
+设置响应体，效果等同于直接赋值给 `ctx.body`
+
+```js
+proxy.on('response', async (ctx) => {
+  ctx.setBody('hello world.');
+}
+```
