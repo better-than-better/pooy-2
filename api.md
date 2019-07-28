@@ -148,12 +148,13 @@ proxy.on('response', (ctx) => {
 
 ```js
 proxy.on('response', async (ctx) => {
+  const contextType = ctx.getHeader('content-type');
   const body = await ctx.getBody();
 
-  if (/html/.test(ctx.getHeader('content-type'))) {
+  if (/html/.test(contentType)) {
     ctx.body = body + `<script>alert('opps!!')</script>`;
   }
-
+}
 ```
 
 ### context.setBody
