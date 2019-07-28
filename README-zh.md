@@ -47,12 +47,8 @@ proxy.listen(9696, () => {
 
 ## 文档
 
-- [proxy.on('request', function)](./api.md#proxyonrequest-function)
-- [proxy.on('requestEnd', function)](./api.md#proxyonrequestend-function)
-- [proxy.on('response', function)](./api.md#proxyonresponse-function)
-- [proxy.on('responseEnd', function)](./api.md#proxyonresponseend-function)
-- [proxy.on('error', function)](./api.md#proxyonerror-function)
-- [proxy.listen](./api.md#proxylistenlisten-function)
+- [proxy.on(eventName, function)](./api.md#proxyon)
+- [proxy.listen](./api.md#proxylisten)
 - [context](./api.md#context)
 
 ## License

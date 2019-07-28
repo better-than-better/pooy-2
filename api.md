@@ -5,7 +5,9 @@ const Pooy = require('pooy');
 const proxy = new Pooy();
 ```
 
-## proxy.on('request', function)
+## proxy.on
+
+### proxy.on('request', function)
 
 ```js
 proxy.on('request', (ctx) => {
@@ -14,7 +16,7 @@ proxy.on('request', (ctx) => {
 });
 ```
 
-## proxy.on('requestEnd', function)
+### proxy.on('requestEnd', function)
 
 ```js
 proxy.on('requestEnd', (ctx) => {
@@ -23,7 +25,7 @@ proxy.on('requestEnd', (ctx) => {
 });
 ```
 
-## proxy.on('response', function)
+### proxy.on('response', function)
 
 ```js
 proxy.on('response', (ctx) => {
@@ -32,7 +34,7 @@ proxy.on('response', (ctx) => {
 });
 ```
 
-## proxy.on('responseEnd', function)
+### proxy.on('responseEnd', function)
 
 ```js
 proxy.on('requestEnd', (ctx) => {
@@ -41,7 +43,7 @@ proxy.on('requestEnd', (ctx) => {
 });
 ```
 
-## proxy.on('error', function)
+### proxy.on('error', function)
 
 ```js
 proxy.on('error', (err, ctx) => {
@@ -51,7 +53,7 @@ proxy.on('error', (err, ctx) => {
 });
 ```
 
-## proxy.listen('listen', function)
+## proxy.listen
 
 ```js
 proxy.listen(9696, () => {
