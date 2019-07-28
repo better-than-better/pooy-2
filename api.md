@@ -144,7 +144,7 @@ proxy.on('response', (ctx) => {
 
 ### context.getBody
 
-获取响应内容，只是一个异步方法
+获取响应内容，这是一个异步方法
 
 ```js
 proxy.on('response', async (ctx) => {
