@@ -6,7 +6,7 @@
 
 ## 安装
 
-pooy 依赖 node >= 7.6
+pooy 依赖 node >= 7.6 ，因为涉及到自签根证书的自动安装更新所以实际运行服务时需要以管理员权限运行
 
 ```bash
 npm install pooy
@@ -50,6 +50,10 @@ proxy.listen(9696, () => {
 - [proxy.on(eventName, function)](./api.md#proxyon)
 - [proxy.listen](./api.md#proxylisten)
 - [context](./api.md#context)
+
+## TODO
+
+平台兼容性（目前仅支持 macOS）
 
 ## License
 

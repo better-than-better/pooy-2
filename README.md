@@ -8,7 +8,7 @@ A proxy service based on NodeJS EventEmitter. It can realize request monitoring 
 
 ## Installation
 
-Pooy requires node v7.6.0 or higher for ES2015 and async function support.
+Pooy requires node v7.6.0 or higher for ES2015 and async function support. Because it involves an automatic installation update of the self-signed root certificate, it is necessary to run the administrator with the administrator privileges.
 
 ```bash
 npm install pooy
@@ -59,6 +59,10 @@ In each event callback, there is a `context` object that wraps its own `response
 - [proxy.on(eventName, function)](./api.md#proxyon)
 - [proxy.listen](./api.md#proxylisten)
 - [context](./api.md#context)
+
+## TODO
+
+Platform compatibility (currently only supports macOS)
 
 ## License
 
