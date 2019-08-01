@@ -1,6 +1,7 @@
 ## Pooy (0.0.1-alpha1🐣)
 
-![](https://img.shields.io/badge/node->%3D7.6.0-brightgreen.svg)
+![Node version](https://img.shields.io/badge/node->%3D7.6.0-brightgreen.svg) ![npm version](https://img.shields.io/npm/v/pooy.svg) ![NPM](https://img.shields.io/npm/l/pooy)
+
 
 一个基于 NodeJS EventEmitter 的代理服务。可实现请求监控抓包、支持修改请求体和响应体，在请求的各个阶段提供二次开发的能力。
 
