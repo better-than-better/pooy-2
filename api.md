@@ -166,3 +166,45 @@ proxy.on('response', async (ctx) => {
   ctx.setBody('hello world.');
 }
 ```
+
+### context.pause
+
+```js
+proxy.on('response', async (ctx) => {
+  ctx.pause();
+}
+```
+
+### context.resume
+
+```js
+proxy.on('response', async (ctx) => {
+  ctx.resume();
+}
+```
+
+### proxy.useRules
+
+```js
+proxy.useRules([{
+  testField: 'url',  // url requestHeaders responseHeaders
+  test: /baidu\.com/,
+  request: {
+    protocol: 'https',
+    host: 'hxtao.xyz:8001',
+    pathname: '/some',
+    hash: '#12',
+    method: 'GET',
+    throttling: { upload: 1024 },
+    body: (body) => body + '..',
+    headers: (headers) => ({ ...headers, ...{ 'cookies': 'name=hxtao' } })
+  },
+  response: {
+    statusCode: 200,
+    throttling: { download: 1024 },
+    body: (body) => body + '..',
+    headers: (headers) => ({ ...headers, ...{ 'hello': 'world' } })
+  },
+  desc: '这是一个描述'
+}]);
+```
