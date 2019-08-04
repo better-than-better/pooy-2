@@ -2,24 +2,28 @@ const Proxy = require('../');
 
 const proxy = new Proxy();
 
+let s = Date.now();
+
 proxy.on('error', (err, ctx) => {
-  console.log('onError', err);
+  console.log('onError', err)
 });
 
 // 接收到了 client 的请求 并同步请求 real remote server
 // 在这里可以控制请求的速率 by ctx.throttling()
 proxy.on('request', (ctx) => {
-  ctx.throttling({
-    upload: 10,  // 每秒传输的字节数
-    latency: 100  // 请求开始到接收第一个字节的时长，类似于 TTFB
-  });
+  console.log(ctx.path)
+  if (ctx.path === '/1212') {
+    s = Date.now();
+    console.log('1:', s,  '\n')
+  }
+ 
   console.log(ctx.id, 'onRequest', ctx.method, ctx.protocol, ctx.host, ctx.url);
 });
 
 // client 请求结束
 proxy.on('requestEnd', (ctx) => {
-  if (ctx.pathname === '/embed.js') {
-    // console.log('', ctx.headers);
+  if (ctx.path === '/1212') {
+    console.log('2:', Date.now() - s,  '\n')
   }
   console.log(ctx.id, 'onRequestEnd', ctx.method, ctx.protocol, ctx.host, ctx.url);
 });
@@ -27,18 +31,20 @@ proxy.on('requestEnd', (ctx) => {
 // 只要对 ctx.body 进行读的操作，此 response 一定是等到 real remote server 响应完再触发的
 // 若不不存在在 ctx.body 的读操作时，此 response 是与 real remote server 同步响应的
 proxy.on('response', async (ctx) => {
-  // ctx.setHeader('proxy-agent', 'pooy');
+  ctx.setHeader('proxy-agent', 'pooy');
+  if (ctx.path === '/1212') {
+    console.log('3', Date.now() - s,  '\n')
+  }
   console.log(ctx.id, 'onResponse', ctx.method, ctx.protocol, ctx.host, ctx.url);
 });
 
 proxy.on('responseEnd', (ctx) => {
-  // console.log(ctx)
+  if (ctx.path === '/1212') {
+    console.log('4', Date.now() - s, '\n')
+  }
   console.log(ctx.id, 'onResponseEnd', ctx.method, ctx.protocol, ctx.host, ctx.url);
 });
 
 proxy.listen(4002, () => {
   console.log('proxy server start...\n');
 });
-
-
-proxy
