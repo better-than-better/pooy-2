@@ -4,8 +4,6 @@ const proxy = new Proxy();
 
 // proxy.direct = true;
 
-let s = Date.now();
-
 proxy.on('error', (err, ctx) => {
   console.log('onError', err)
 });
@@ -25,6 +23,9 @@ proxy.on('requestEnd', (ctx) => {
 // 只要对 ctx.body 进行读的操作，此 response 一定是等到 real remote server 响应完再触发的
 // 若不不存在在 ctx.body 的读操作时，此 response 是与 real remote server 同步响应的
 proxy.on('response', async (ctx) => {
+  ctx.throttling({
+    download: 1024 * 1024
+  });
   ctx.setHeader('proxy-agent', 'pooy');
   // console.log(ctx.id, 'onResponse', ctx.method, ctx.protocol, ctx.host, ctx.url);
 });
