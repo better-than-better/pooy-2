@@ -1,17 +1,28 @@
 const Proxy = require('../');
+const fs = require('fs');
 
 const proxy = new Proxy();
 
 // proxy.direct = true;
 
 proxy.on('error', (err, ctx) => {
-  console.log('onError', err)
+  // console.log('onError', err)
 });
 
 // 接收到了 client 的请求 并同步请求 real remote server
 // 在这里可以控制请求的速率 by ctx.throttling()
-proxy.on('request', (ctx) => {
-  console.log(ctx.path) 
+proxy.on('request', async (ctx) => {
+  // console.log(ctx.path, ctx.body);
+
+  const body = await ctx.getBody();
+
+  if (/json/.test(ctx.get('content-type'))) {
+    console.log(body);
+  }
+
+  ctx.body = {title: 'hello'};
+
+  // console.log((await ctx.getBody()).toString());
   // console.log(ctx.id, 'onRequest', ctx.method, ctx.protocol, ctx.host, ctx.url);
 });
 
@@ -23,10 +34,23 @@ proxy.on('requestEnd', (ctx) => {
 // 只要对 ctx.body 进行读的操作，此 response 一定是等到 real remote server 响应完再触发的
 // 若不不存在在 ctx.body 的读操作时，此 response 是与 real remote server 同步响应的
 proxy.on('response', async (ctx) => {
-  ctx.throttling({
-    download: 1024 * 1024
-  });
-  ctx.setHeader('proxy-agent', 'pooy');
+  // ctx.throttling({
+  //   download: 100
+  // });
+
+  // ctx.set('fuck', 'you');
+
+  // console.log('headers', ctx.headers);
+
+  // if (/html/.test(ctx.get('content-type'))) {
+  //   const body = await ctx.getBody();
+
+  //   ctx.removeHeader('content-security-policy');
+
+  //   ctx.body = body + '<script>console.log("0"); alert("FBI warning!"); console.log("?");</script>';
+  // }
+  
+  // ctx.setHeader('proxy-agent', 'pooy');
   // console.log(ctx.id, 'onResponse', ctx.method, ctx.protocol, ctx.host, ctx.url);
 });
 
