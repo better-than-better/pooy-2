@@ -64,7 +64,7 @@ In each event callback, there is a `context` object that wraps its own `response
 
 ## TODO
 
-Platform compatibility (currently only supports macOS)
+⚠️ Platform compatibility (currently only supports macOS)
 
 ## License
 

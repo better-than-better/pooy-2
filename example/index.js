@@ -12,7 +12,7 @@ proxy.on('error', (err, ctx) => {
 // 接收到了 client 的请求 并同步请求 real remote server
 // 在这里可以控制请求的速率 by ctx.throttling()
 proxy.on('request', async (ctx) => {
-  console.log(ctx.path);
+  console.log(ctx.url);
 });
 
 // client 请求结束

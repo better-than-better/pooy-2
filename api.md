@@ -61,6 +61,28 @@ proxy.listen(9696, () => {
 });
 ```
 
+## proxy.useRules
+
+```js
+const rules = [{
+  test: (ctx) => {
+    return ctx.url === 'www.baidu.com' && ctx.method === 'GET';
+  },
+  response: {
+    statusCode: 400,
+    body: (body) => body + `<script>alert('FBI Warning!!')</script>`,
+    headers: {},
+    throttling: {
+      download: 1024
+    }
+  }
+}];
+
+proxy.useRules(rules);
+```
+
+
+
 ## ## proxy.direct
 
 ```js

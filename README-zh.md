@@ -50,11 +50,12 @@ proxy.listen(9696, () => {
 
 - [proxy.on(eventName, function)](./api.md#proxyon)
 - [proxy.listen](./api.md#proxylisten)
+- [proxy.useRules](./api.md#proxyuseRules)
 - [context](./api.md#context)
 
 ## TODO
 
-平台兼容性（目前仅支持 macOS）
+⚠️ 平台兼容性（目前仅支持 macOS）
 
 ## License
 
