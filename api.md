@@ -83,7 +83,7 @@ proxy.useRules(rules);
 
 
 
-## ## proxy.direct
+## proxy.direct
 
 ```js
 proxy.direct = true;
