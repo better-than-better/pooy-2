@@ -42,7 +42,7 @@ module.exports = function createRootCA(domain = 'pooy.proxy', RSABits = 1024) {
     },
     {
       shortName: 'OU',
-      value: 'https://www.52shangou.com'
+      value: 'https://hxtao.xyz'
     }
   ];
 

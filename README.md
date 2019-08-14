@@ -60,11 +60,13 @@ In each event callback, there is a `context` object that wraps its own `response
 
 - [proxy.on(eventName, function)](./api.md#proxyon)
 - [proxy.listen](./api.md#proxylisten)
+- [proxy.useRules](./api.md#proxyuserules)
+- [proxy.direct](./api.md#proxydirect)
 - [context](./api.md#context)
 
 ## TODO
 
-Platform compatibility (currently only supports macOS)
+⚠️ Platform compatibility (currently only supports macOS)
 
 ## License
 

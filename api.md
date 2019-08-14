@@ -61,6 +61,36 @@ proxy.listen(9696, () => {
 });
 ```
 
+## proxy.useRules
+
+```js
+const rules = [{
+  test: (ctx) => {
+    return ctx.url === 'www.baidu.com' && ctx.method === 'GET';
+  },
+  response: {
+    statusCode: 400,
+    body: (body) => body + `<script>alert('FBI Warning!!')</script>`,
+    headers: {},
+    throttling: {
+      download: 1024
+    }
+  }
+}];
+
+proxy.useRules(rules);
+```
+
+
+
+## proxy.direct
+
+```js
+proxy.direct = true;
+```
+
+为 `true` 时系统直连，反之流量走 proxy
+
 ## context
 
 ### context.id
@@ -113,14 +143,13 @@ proxy response 对象，支持重写（仅在 response 时）
 
 proxy.on('request', (ctx) => {
   ctx.throttling({
-    upload: 10,  // 每秒传输的字节数
-    latency: 100  // 请求开始到接收第一个字节的时长，类似于 TTFB
+    upload: 1024  // 每秒传输的字节数
   });
 });
 
 proxy.on('response', (ctx) => {
   ctx.throttling({
-    download: 10,  // 每秒传输的字节数
+    download: 1024  // 每秒传输的字节数
   });
 });
 
@@ -165,4 +194,46 @@ proxy.on('response', async (ctx) => {
 proxy.on('response', async (ctx) => {
   ctx.setBody('hello world.');
 }
+```
+
+### context.pause
+
+```js
+proxy.on('response', async (ctx) => {
+  ctx.pause();
+}
+```
+
+### context.resume
+
+```js
+proxy.on('response', async (ctx) => {
+  ctx.resume();
+}
+```
+
+### proxy.useRules
+
+```js
+proxy.useRules([{
+  testField: 'url',  // url requestHeaders responseHeaders
+  test: /baidu\.com/,
+  request: {
+    protocol: 'https',
+    host: 'hxtao.xyz:8001',
+    pathname: '/some',
+    hash: '#12',
+    method: 'GET',
+    throttling: { upload: 1024 },
+    body: (body) => body + '..',
+    headers: (headers) => ({ ...headers, ...{ 'cookies': 'name=hxtao' } })
+  },
+  response: {
+    statusCode: 200,
+    throttling: { download: 1024 },
+    body: (body) => body + '..',
+    headers: (headers) => ({ ...headers, ...{ 'hello': 'world' } })
+  },
+  desc: '这是一个描述'
+}]);
 ```
