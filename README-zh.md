@@ -1,4 +1,4 @@
-## Pooy (0.0.1-alpha1🐣)
+## Pooy (0.0.1-beta1🐣)
 
 ![Node version](https://img.shields.io/badge/node->%3D7.6.0-brightgreen.svg) ![npm version](https://img.shields.io/npm/v/pooy.svg) ![NPM](https://img.shields.io/npm/l/pooy)
 
@@ -55,6 +55,19 @@ proxy.listen(9696, () => {
 - [context](./api.md#context)
 
 ## TODO
+
+### 功能方面
+
+增加功能性函数
+
+- dns 欺骗
+- 一键无缓存
+- cookies 设置
+- 黑名单(直接丢掉连接请求)
+- 白名单(只抓包匹配的规则，之外的全部丢弃)
+- 可选节流
+
+### 跨平台
 
 ⚠️ 平台兼容性（目前仅支持 macOS）
 

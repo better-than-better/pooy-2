@@ -1,4 +1,4 @@
-## Pooy (0.0.1-alpha1🐣)
+## Pooy (0.0.1-beta🐣)
 
 ![Node version](https://img.shields.io/badge/node->%3D7.6.0-brightgreen.svg) ![npm version](https://img.shields.io/npm/v/pooy.svg) ![NPM](https://img.shields.io/npm/l/pooy)
 

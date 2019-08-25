@@ -14,17 +14,17 @@ proxy.on('error', (err, ctx) => {
 proxy.on('request', async (ctx) => {
   console.log(ctx.originalUrl);
 
-  if (/hxtao\.xyz/.test(ctx.originalUrl)) {
-    ctx.protocol = 'http:';
-    ctx.host = 'www.cnki.net';
-  }
+  // if (/hxtao\.xyz/.test(ctx.originalUrl)) {
+  //   ctx.protocol = 'http:';
+  //   ctx.host = 'www.cnki.net';
+  // }
 
-  if (/note.hxtao\.xyz/.test(ctx.originalUrl)) {
-    ctx.protocol = 'https:';
-    ctx.host = 'www.baidu.com';
-  }
+  // if (/note.hxtao\.xyz/.test(ctx.originalUrl)) {
+  //   ctx.protocol = 'https:';
+  //   ctx.host = 'www.baidu.com';
+  // }
 
-  console.log(ctx.url, '\n');
+  // console.log(ctx.url, '\n');
 });
 
 // client 请求结束
