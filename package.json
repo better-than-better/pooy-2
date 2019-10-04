@@ -26,6 +26,7 @@
   "author": "hxtao",
   "license": "MIT",
   "dependencies": {
+    "multiparty": "^4.2.1",
     "node-forge": "^0.8.5",
     "statuses": "^1.5.0"
   }
