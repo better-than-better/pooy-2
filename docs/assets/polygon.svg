@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="55px" height="57px" viewBox="0 0 55 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Polygon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="3.27777778%" x2="100%" y2="96.7222222%" id="linearGradient-1">
+            <stop stop-color="#79F1A4" offset="0%"></stop>
+            <stop stop-color="#0E5CAD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="normal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Apple-TV-2" transform="translate(-1799.000000, -309.000000)" fill="url(#linearGradient-1)">
+            <polygon id="Polygon" transform="translate(1824.000000, 337.000000) rotate(20.000000) translate(-1824.000000, -337.000000) " points="1824 308 1852.5317 328.038507 1841.63356 360.461493 1806.36644 360.461493 1795.4683 328.038507"></polygon>
+        </g>
+    </g>
+</svg>

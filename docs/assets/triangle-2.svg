@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="132px" height="145px" viewBox="0 0 132 145" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="11.1814759%" x2="100%" y2="88.8185241%" id="linearGradient-1">
+            <stop stop-color="#FFF6B7" offset="0%"></stop>
+            <stop stop-color="#F6416C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="normal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Apple-TV-2" transform="translate(-1653.000000, -85.000000)" fill="url(#linearGradient-1)">
+            <polygon id="Triangle" transform="translate(1744.500000, 143.000000) rotate(24.000000) translate(-1744.500000, -143.000000) " points="1744.5 80 1816 206 1673 206"></polygon>
+        </g>
+    </g>
+</svg>

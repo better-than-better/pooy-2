@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="Pooy nodejs proxy">
+  <meta name="description" content="just a http proxy / http monitor tool powered by nodejs.">
+  <title>Pooy</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1444407_u9suoco33rh.css">
+  <link href="https://fonts.googleapis.com/css?family=Mansalva|Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Pooy</h1>
+    <h2>基于 nodejs 的 http 代理工具</h2>
+    <p>
+      <!-- <a href=""><i class="iconfont icon-clouddownload"></i></a>
+      <a href=""><i class="iconfont icon-doc"></i></a> -->
+      <!-- <a href="https://github.com/better-than-better/pooy"><i class="iconfont icon-github"></i></a> -->
+    </p>
+  </header>
+  <section class="ui-preview">
+    <div class="container">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+      <div class="circle circle-3"></div>
+      <div class="triangle triangle-1"></div>
+      <div class="triangle triangle-2"></div>
+      <div class="rectangle rectangle-1"></div>
+      <div class="rectangle rectangle-2"></div>
+      <div class="polygon polygon-1"></div>
+      <img src="/assets/client-ui.webp" alt="client-ui" class="client-ui-img">
+    </div>
+  </section>
+  <section class="installation">
+    <h1>安装</h1>
+    <p>请先安装 npm，如果没有安装请转 ➜ ➜  <a href="https://github.com/nvm-sh/nvm">nvm</a></p>
+    <pre>npm i -g pooy</pre>
+  </section>
+  <section class="installation">
+    <h1>使用</h1>
+    <pre>pooy --[options]</pre>
+    <p>options 可选参数： <span>manual</span> <span>global</span>,  默认 manual.</p>
+  </section>
+  <section class="installation">
+    <h1>支持的操作系统</h1>
+    <div class="os-items">
+      <div class="os-item">
+        <img src="/assets/mac.svg" alt="mac os" class="os-icon">
+        <span>Mac os</span>
+      </div>
+    </div>
+  </section>
+  <section class="installation">
+    <h1>关于</h1>
+    <p>github <a href="https://github.com/better-than-better/pooy">地址</a></p>
+  </section>
+  <footer class="copy-rights"></footer>
+  <script>
+    ;(function() {
+      const cr = document.querySelector('.copy-rights');
+      const date = new Date();
+
+      cr.innerHTML = `© ${date.getFullYear()} <i class="iconfont icon-aixin"></i> _始於夏末_`;
+    })();
+  </script>
+</body>
+</html>
